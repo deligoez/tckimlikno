@@ -8,8 +8,6 @@
 
 Turkish Identification Number Verification & Validation Package for Laravel.
 
-Take a look at [contributing.md](contributing.md) to see a to do list.
-
 ## Installation
 
 Via Composer
