@@ -23,7 +23,13 @@ $ composer require deligoez/tckimlikno
 use Deligoez\TCKimlikNo\TCKimlikNo;
 
 
-TCKimlikNo::verify('12345678901'); // returns boolean
+// Verifies Citizenship Number According to it's Algorithm.
+// Returns Boolean
+TCKimlikNo::verify('12345678901');
+
+// Verifies Parameters and validates all using nvi.gov.tr API
+// Returns Boolean
+TCKimlikNo::validate('10000000146', 'YUNUS EMRE', 'DELİGÖZ', '1900') // uses nvi.gov
 ```
 
 ## Change log
@@ -56,11 +62,11 @@ MIT. Please see the [license file](license.md) for more information.
 [ico-version]: https://img.shields.io/packagist/v/deligoez/tckimlikno.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/deligoez/tckimlikno.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/deligoez/tckimlikno/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
+[ico-styleci]: https://styleci.io/repos/193854934/shield
 
 [link-packagist]: https://packagist.org/packages/deligoez/tckimlikno
 [link-downloads]: https://packagist.org/packages/deligoez/tckimlikno
 [link-travis]: https://travis-ci.org/deligoez/tckimlikno
-[link-styleci]: https://styleci.io/repos/12345678
+[link-styleci]: https://styleci.io/repos/193854934
 [link-author]: https://github.com/deligoez
 [link-contributors]: ../../contributors
