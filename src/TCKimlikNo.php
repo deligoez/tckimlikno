@@ -22,7 +22,7 @@ class TCKimlikNo
         string $name,
         string $surname,
         string $birthYear,
-        bool $autoUppercase = false
+        bool $autoUppercase = true
     ): bool {
         if ($autoUppercase) {
             $name = self::toUppercaseTr($name);

@@ -69,7 +69,7 @@ public function rules()
             $name,
             $surname,
             $birthYear,
-            $autoUppercase // Optional, defaults to false
+            $autoUppercase // Optional, defaults to true
         )],
     ];
 }
