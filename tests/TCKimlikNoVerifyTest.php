@@ -5,8 +5,16 @@ namespace Deligoez\TCKimlikNoDogrula\Tests;
 use PHPUnit\Framework\TestCase;
 use Deligoez\TCKimlikNo\TCKimlikNo;
 
-class TCKimlikNoTest extends TestCase
+class TCKimlikNoVerifyTest extends TestCase
 {
+    /** @test */
+    public function it_must_contain_only_numbers()
+    {
+        $this->assertFalse(
+            TCKimlikNo::verify('not-number')
+        );
+    }
+
     /** @test */
     public function it_returns_false_for_more_than_11_digits()
     {
@@ -58,8 +66,8 @@ class TCKimlikNoTest extends TestCase
             TCKimlikNo::verify('10000000146')
         );
     }
-    
-    /** @test */ 
+
+    /** @test */
     public function eleventh_digit_must_be_mod_10_of_sum_of_all_digits_plus_10th_digit()
     {
         $this->assertFalse(

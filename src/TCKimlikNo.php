@@ -2,11 +2,17 @@
 
 namespace Deligoez\TCKimlikNo;
 
+use SoapClient;
+
 class TCKimlikNo
 {
-    public static function verify($tcKimlikNo)
+    /**
+     * @param  string  $tcKimlikNo
+     * @return bool
+     */
+    public static function verify(string $tcKimlikNo): bool
     {
-        if (strlen($tcKimlikNo) != 11) {
+        if (strlen(strval($tcKimlikNo)) != 11) {
             return false;
         }
 
