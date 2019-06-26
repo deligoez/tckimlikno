@@ -12,7 +12,8 @@
     "homepage": "https://github.com/deligoez/tckimlikno",
     "keywords": ["Laravel", "TCKimlikNo"],
     "require": {
-        "illuminate/support": "~5"
+        "php": "^7.2",
+        "illuminate/support": "^5.7"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.0",
