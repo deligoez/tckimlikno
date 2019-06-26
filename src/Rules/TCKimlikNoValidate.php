@@ -24,7 +24,7 @@ class TCKimlikNoValidate implements Rule
         string $surname,
         string $birthYear,
         bool $autoUppercase = true
-    ){
+    ) {
         $this->name = $name;
         $this->surname = $surname;
         $this->birthYear = $birthYear;
