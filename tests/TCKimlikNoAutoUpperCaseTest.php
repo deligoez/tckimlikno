@@ -2,9 +2,9 @@
 
 namespace Deligoez\TCKimlikNoDogrula\Tests;
 
+use ReflectionMethod;
 use PHPUnit\Framework\TestCase;
 use Deligoez\TCKimlikNo\TCKimlikNo;
-use ReflectionMethod;
 
 class TCKimlikNoAutoUpperCaseTest extends TestCase
 {
@@ -14,16 +14,15 @@ class TCKimlikNoAutoUpperCaseTest extends TestCase
     {
         parent::setUp();
 
-        $this->toUppercaseTrMethod =  new ReflectionMethod(TCKimlikNo::class, 'toUppercaseTr');
+        $this->toUppercaseTrMethod = new ReflectionMethod(TCKimlikNo::class, 'toUppercaseTr');
         $this->toUppercaseTrMethod->setAccessible(true);
-
     }
 
     /** @test */
     public function it_uppercases_words()
     {
         $this->assertEquals(
-            "YUNUS EMRE",
+            'YUNUS EMRE',
             $this->toUppercaseTrMethod->invoke(new TCKimlikNo(), 'yunus emre')
         );
     }
@@ -32,7 +31,7 @@ class TCKimlikNoAutoUpperCaseTest extends TestCase
     public function it_uppercases_turkish_specific_letters()
     {
         $this->assertEquals(
-            "ÇĞIÖŞÜİ",
+            'ÇĞIÖŞÜİ',
             $this->toUppercaseTrMethod->invoke(new TCKimlikNo(), 'çğıöşüi')
         );
     }
@@ -41,7 +40,7 @@ class TCKimlikNoAutoUpperCaseTest extends TestCase
     public function it_uppercases_turkish_specific_letters_with_circumflex()
     {
         $this->assertEquals(
-            "ÂÊÎÔÛ",
+            'ÂÊÎÔÛ',
             $this->toUppercaseTrMethod->invoke(new TCKimlikNo(), 'âêîôû')
         );
     }
