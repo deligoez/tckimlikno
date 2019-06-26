@@ -1,0 +1,46 @@
+{
+    "name": "deligoez/tckimlikno",
+    "description": "Turkish Identification Number Verification & Validation Package for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yunus Emre Deligöz",
+            "email": "ye@deligoz.me",
+            "homepage": "http://deligoz.me"
+        }
+    ],
+    "homepage": "https://github.com/deligoez/tckimlikno",
+    "keywords": ["Laravel", "TCKimlikNo"],
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~7.0",
+        "mockery/mockery": "^1.1",
+        "orchestra/testbench": "~3.0",
+        "sempro/phpunit-pretty-print": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Deligoez\\TCKimlikNo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Deligoez\\TCKimlikNo\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit --colors=always"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deligoez\\TCKimlikNo\\TCKimlikNoServiceProvider"
+            ],
+            "aliases": {
+                "TCKimlikNo": "Deligoez\\TCKimlikNo\\Facades\\TCKimlikNo"
+            }
+        }
+    }
+}
