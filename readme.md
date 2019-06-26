@@ -42,7 +42,40 @@ TCKimlikNo::validate('10000000146', 'Yunus Emre', 'Deligöz', '1900')
 TCKimlikNo::validate('10000000146', 'YUNUS EMRE', 'DELİGÖZ', '1900', false)
 ```
 
-## Change log
+## Available Laravel Validation Rules
+
+### TCKimlikNoVerify
+
+```php
+// in a Form Request Class
+
+public function rules()
+{
+    return [
+        'tckimlikno' => ['required', new TCKimlikNoVerify()],
+    ];
+}
+```
+
+### TCKimlikNoValidate
+
+```php
+// in a Form Request Class
+
+public function rules()
+{
+    return [
+        'tckimlikno' => ['required', new TCKimlikNoValidate(
+            $name,
+            $surname,
+            $birthYear,
+            $autoUppercase // Optional, defaults to false
+        )],
+    ];
+}
+```
+
+## Changelog
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
 
