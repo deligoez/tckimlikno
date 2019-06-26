@@ -57,7 +57,7 @@ class TCKimlikNo
     }
 
     /**
-     * Verify Citizenship Number According to it's Algorithm
+     * Verify Citizenship Number According to it's Algorithm.
      *
      * @param  string  $tcKimlikNo
      * @return bool

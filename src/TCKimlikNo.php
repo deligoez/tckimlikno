@@ -2,8 +2,6 @@
 
 namespace Deligoez\TCKimlikNo;
 
-use SoapClient;
-
 class TCKimlikNo
 {
     /**
