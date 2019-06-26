@@ -18,10 +18,10 @@ class TCKimlikNo
      * @throws \SoapFault
      */
     public static function validate(
-        string $tcKimlikNo,
+        $tcKimlikNo,
         string $name,
         string $surname,
-        string $birthYear,
+        $birthYear,
         bool $autoUppercase = true
     ): bool {
         if ($autoUppercase) {
@@ -62,8 +62,10 @@ class TCKimlikNo
      * @param  string  $tcKimlikNo
      * @return bool
      */
-    public static function verify(string $tcKimlikNo): bool
+    public static function verify($tcKimlikNo): bool
     {
+        $tcKimlikNo = strval($tcKimlikNo);
+
         if (strlen(strval($tcKimlikNo)) != 11) {
             return false;
         }

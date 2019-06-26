@@ -8,6 +8,14 @@ use Deligoez\TCKimlikNo\TCKimlikNo;
 class TCKimlikNoVerifyTest extends TestCase
 {
     /** @test */
+    public function it_also_works_with_integers()
+    {
+        $this->assertTrue(
+            TCKimlikNo::verify(10000000146)
+        );
+    }
+
+    /** @test */
     public function it_must_contain_only_numbers()
     {
         $this->assertFalse(
