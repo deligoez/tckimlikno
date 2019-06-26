@@ -33,7 +33,8 @@ use Deligoez\TCKimlikNo\TCKimlikNo;
 
 // Verifies Citizenship Number According to it's Algorithm.
 // Returns Boolean
-TCKimlikNo::verify('12345678901');
+TCKimlikNo::verify('12345678901'); // Returns false
+TCKimlikNo::verify('10000000146'); // Returns true
 
 // Verifies Parameters and validates all using nvi.gov.tr API
 // Returns Boolean
