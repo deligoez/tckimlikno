@@ -49,7 +49,7 @@ TCKimlikNo::validate('10000000146', 'YUNUS EMRE', 'DELİGÖZ', '1900', false)
 ### TCKimlikNoVerify
 
 ```php
-// in a Form Request Class
+// In a Form Request Class
 
 public function rules()
 {
@@ -59,10 +59,31 @@ public function rules()
 }
 ```
 
+```php
+// In a Controller
+
+use Deligoez\TCKimlikNo\Rules\TCKimlikNoVerify;
+
+/**
+ * Store a tckn.
+ *
+ * @param  Request  $request
+ * @return Response
+ */
+public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'tckn' => ['bail', 'required', new TCKimlikNoVerify()],
+    ]);
+
+    // tckn is valid...
+}
+```
+
 ### TCKimlikNoValidate
 
 ```php
-// in a Form Request Class
+// In a Form Request Class
 
 public function rules()
 {
