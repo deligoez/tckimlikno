@@ -1,5 +1,6 @@
 # TCKimlikNo
 
+[![MIT Licensed][ico-license]](license.md)
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
@@ -104,6 +105,7 @@ If you discover any security related issues, please email ye@deligoz.me instead 
 MIT. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/deligoez/tckimlikno.svg?style=flat-square
+[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/deligoez/tckimlikno.svg?style=flat-square
 [ico-travis]: https://img.shields.io/travis/deligoez/tckimlikno/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/193854934/shield
