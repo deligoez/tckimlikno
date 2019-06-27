@@ -19,13 +19,6 @@ $ composer require deligoez/tckimlikno
 
 If you are using Laravel 5.5+, the package will automatically register the service provider for you.
 
-If you are using Lumen, you will need to add the following to bootstrap\app.php:
-
-``` php
-\\ Register Service Providers
-$app->register(Deligoez\TCKimlikNo\TCKimlikNoServiceProvider::class);
-```
-
 ## Usage
 
 ``` php
@@ -110,7 +103,7 @@ $ composer test
 
 ## Contributing
 
-Please see [contributing.md](contributing.md) for details and a todolist.
+Please see [contributing.md](contributing.md) for details and a todo list.
 
 ## Security
 

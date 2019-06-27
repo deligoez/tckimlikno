@@ -10,7 +10,7 @@
         }
     ],
     "homepage": "https://github.com/deligoez/tckimlikno",
-    "keywords": ["Laravel", "TCKimlikNo"],
+    "keywords": ["laravel", "tckimlikno"],
     "require": {
         "php": "^7.2",
         "illuminate/support": "^5.7"

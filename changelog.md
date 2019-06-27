@@ -2,6 +2,10 @@
 
 All notable changes to `TCKimlikNo` will be documented in this file.
 
+## [Unreleased]
+
+- 
+
 ## Version 1.2.0 - 2019-06-27
 
 - It can verify/validate both Integer and String Citizen IDs
