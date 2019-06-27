@@ -10,7 +10,7 @@
         }
     ],
     "homepage": "https://github.com/deligoez/tckimlikno",
-    "keywords": ["laravel", "tckimlikno"],
+    "keywords": ["laravel", "package", "validation", "tckimlikno", "mernis"],
     "require": {
         "php": "^7.2",
         "illuminate/support": "^5.7"
