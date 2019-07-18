@@ -91,6 +91,16 @@ public function rules()
 }
 ```
 
+## Faker Provider
+
+```php
+$faker = Faker\Factory::create();
+$faker->addProvider(new EmanueleMinotto\Faker\PlaceholdItProvider($faker));
+
+// a Random Valid TCKN
+$tckn = $faker->addProvider(new \Deligoez\TCKimlikNo\Provider\TCKimlikNoFakerProvider($faker)); // 60174067810 
+```
+
 ## Changelog
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.

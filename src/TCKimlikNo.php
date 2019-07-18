@@ -74,20 +74,34 @@ class TCKimlikNo
             return false;
         }
 
-        $oddDigitsSum = $tcKimlikNo[0] + $tcKimlikNo[2] + $tcKimlikNo[4] + $tcKimlikNo[6] + $tcKimlikNo[8];
-        $evenDigitsSum = $tcKimlikNo[1] + $tcKimlikNo[3] + $tcKimlikNo[5] + $tcKimlikNo[7];
-        $digit10 = ($oddDigitsSum * 7 - $evenDigitsSum) % 10;
-        $digit11 = ($oddDigitsSum + $evenDigitsSum + $tcKimlikNo[9]) % 10;
+        $checksumDigits = static::generateChecksumDigits($tcKimlikNo);
 
-        if ($digit10 != $tcKimlikNo[9]) {
+        if ($checksumDigits[0] != $tcKimlikNo[9]) {
             return false;
         }
 
-        if ($digit11 != $tcKimlikNo[10]) {
+        if ($checksumDigits[1] != $tcKimlikNo[10]) {
             return false;
         }
 
         return true;
+    }
+
+    /**
+     * Generates Checksum Digits from the first 9 Digits
+     *
+     * @param $tcKimlikNo
+     * @return string
+     */
+    public static function generateChecksumDigits($tcKimlikNo): string
+    {
+        $oddDigitsSum = $tcKimlikNo[0] + $tcKimlikNo[2] + $tcKimlikNo[4] + $tcKimlikNo[6] + $tcKimlikNo[8];
+        $evenDigitsSum = $tcKimlikNo[1] + $tcKimlikNo[3] + $tcKimlikNo[5] + $tcKimlikNo[7];
+
+        $digit10 = ($oddDigitsSum * 7 - $evenDigitsSum) % 10;
+        $digit11 = ($oddDigitsSum + $evenDigitsSum + $digit10) % 10;
+
+        return $digit10 . $digit11;
     }
 
     /**
@@ -96,7 +110,7 @@ class TCKimlikNo
      * @param $name
      * @return bool|false|mixed|string|string[]|null
      */
-    private static function toUppercaseTr($name)
+    private static function toUppercaseTr(string $name): string
     {
         return mb_strtoupper(
             str_replace(
