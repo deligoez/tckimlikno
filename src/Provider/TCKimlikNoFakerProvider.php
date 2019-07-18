@@ -9,7 +9,7 @@ class TCKimlikNoFakerProvider extends Base
 {
     public static function tckn()
     {
-        $randomDigits = static::regexify('/^[1-9]{1}[0-9]{8}$/');
+        $randomDigits = static::regexify('/^[1-8]{2}[0-9]{7}$/');
 
         $checksumDigits = TCKimlikNo::generateChecksumDigits($randomDigits);
 
