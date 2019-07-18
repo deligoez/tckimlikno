@@ -13,7 +13,8 @@
     "keywords": ["laravel", "package", "validation", "tckimlikno", "mernis"],
     "require": {
         "php": "^7.2",
-        "illuminate/support": "^5.7"
+        "illuminate/support": "^5.7",
+        "fzaninotto/faker": "^1.8"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.0",
