@@ -2,9 +2,9 @@
 
 namespace Deligoez\TCKimlikNoDogrula\Tests\Provider;
 
-use Deligoez\TCKimlikNo\Provider\TCKimlikNoFakerProvider;
 use Faker\Factory;
 use PHPUnit\Framework\TestCase;
+use Deligoez\TCKimlikNo\Provider\TCKimlikNoFakerProvider;
 
 class TCKimlikNoFakerProviderTest extends TestCase
 {

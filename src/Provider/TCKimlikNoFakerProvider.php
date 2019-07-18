@@ -2,8 +2,8 @@
 
 namespace Deligoez\TCKimlikNo\Provider;
 
-use Deligoez\TCKimlikNo\TCKimlikNo;
 use Faker\Provider\Base;
+use Deligoez\TCKimlikNo\TCKimlikNo;
 
 class TCKimlikNoFakerProvider extends Base
 {
@@ -13,6 +13,6 @@ class TCKimlikNoFakerProvider extends Base
 
         $checksumDigits = TCKimlikNo::generateChecksumDigits($randomDigits);
 
-        return $randomDigits . $checksumDigits;
+        return $randomDigits.$checksumDigits;
     }
 }

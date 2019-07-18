@@ -88,7 +88,7 @@ class TCKimlikNo
     }
 
     /**
-     * Generates Checksum Digits from the first 9 Digits
+     * Generates Checksum Digits from the first 9 Digits.
      *
      * @param $tcKimlikNo
      * @return string
@@ -101,7 +101,7 @@ class TCKimlikNo
         $digit10 = ($oddDigitsSum * 7 - $evenDigitsSum) % 10;
         $digit11 = ($oddDigitsSum + $evenDigitsSum + $digit10) % 10;
 
-        return $digit10 . $digit11;
+        return $digit10.$digit11;
     }
 
     /**
