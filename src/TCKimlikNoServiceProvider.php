@@ -25,31 +25,6 @@ class TCKimlikNoServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register any package services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        $this->mergeConfigFrom(__DIR__.'/../config/tckimlikno.php', 'tckimlikno');
-
-        // Register the service the package provides.
-        $this->app->singleton('tckimlikno', function ($app) {
-            return new TCKimlikNo;
-        });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['tckimlikno'];
-    }
-
-    /**
      * Console-specific booting.
      *
      * @return void
@@ -78,5 +53,30 @@ class TCKimlikNoServiceProvider extends ServiceProvider
 
         // Registering package commands.
         // $this->commands([]);
+    }
+
+    /**
+     * Register any package services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mergeConfigFrom(__DIR__.'/../config/tckimlikno.php', 'tckimlikno');
+
+        // Register the service the package provides.
+        $this->app->singleton('tckimlikno', function ($app) {
+            return new TCKimlikNo;
+        });
+    }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['tckimlikno'];
     }
 }

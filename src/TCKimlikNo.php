@@ -29,19 +29,19 @@ class TCKimlikNo
             $surname = self::toUppercaseTr($surname);
         }
 
-        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]{1,}$/', self::toUppercaseTr($name))) {
+        if (!preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($name))) {
             return false;
         }
 
-        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]{1,}$/', self::toUppercaseTr($surname))) {
+        if (!preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($surname))) {
             return false;
         }
 
-        if (! preg_match('/^[0-9]{4}$/', $birthYear)) {
+        if (!preg_match('/^[0-9]{4}$/', $birthYear)) {
             return false;
         }
 
-        if (! self::verify($tcKimlikNo)) {
+        if (!self::verify($tcKimlikNo)) {
             return false;
         }
 
@@ -54,6 +54,23 @@ class TCKimlikNo
             ]);
 
         return $response->TCKimlikNoDogrulaResult ? true : false;
+    }
+
+    /**
+     * Prepares, trims, and makes uppercase names.
+     *
+     * @param $name
+     * @return bool|false|mixed|string|string[]|null
+     */
+    private static function toUppercaseTr(string $name): string
+    {
+        return mb_strtoupper(
+            str_replace(
+                ['ç', 'ğ', 'ı', 'ö', 'ş', 'ü', 'i'],
+                ['Ç', 'Ğ', 'I', 'Ö', 'Ş', 'Ü', 'İ'],
+                $name
+            )
+        );
     }
 
     /**
@@ -70,7 +87,7 @@ class TCKimlikNo
             return false;
         }
 
-        if (! preg_match('/^[1-9]{1}[0-9]{9}[0,2,4,6,8]{1}$/', $tcKimlikNo)) {
+        if (!preg_match('/^[1-9]{1}[0-9]{9}[0,2,4,6,8]{1}$/', $tcKimlikNo)) {
             return false;
         }
 
@@ -102,22 +119,5 @@ class TCKimlikNo
         $digit11 = ($oddDigitsSum + $evenDigitsSum + $digit10) % 10;
 
         return $digit10.$digit11;
-    }
-
-    /**
-     * Prepares, trims, and makes uppercase names.
-     *
-     * @param $name
-     * @return bool|false|mixed|string|string[]|null
-     */
-    private static function toUppercaseTr(string $name): string
-    {
-        return mb_strtoupper(
-            str_replace(
-                ['ç', 'ğ', 'ı', 'ö', 'ş', 'ü', 'i'],
-                ['Ç', 'Ğ', 'I', 'Ö', 'Ş', 'Ü', 'İ'],
-                $name
-            )
-        );
     }
 }

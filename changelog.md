@@ -6,6 +6,19 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 - 
 
+## Version 1.4.0 - 2019-09-05
+
+- Laravel 6 Support
+
+## Version 1.3.0 - 2019-07-18
+
+- Readme: Add usage information for Faker Provider
+- Add TCKimlikNoFakerProvider
+- Add TCKimlikNoFakerProviderTest
+- TCKimlikNo: Add generateChecksumDigits() Method
+- Don't generate Foreigner Identity Number
+- Add fzaninotto/faker requirement
+
 ## Version 1.2.0 - 2019-06-27
 
 - It can verify/validate both Integer and String Citizen IDs
