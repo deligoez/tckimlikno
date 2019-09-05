@@ -29,19 +29,19 @@ class TCKimlikNo
             $surname = self::toUppercaseTr($surname);
         }
 
-        if (!preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($name))) {
+        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($name))) {
             return false;
         }
 
-        if (!preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($surname))) {
+        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($surname))) {
             return false;
         }
 
-        if (!preg_match('/^[0-9]{4}$/', $birthYear)) {
+        if (! preg_match('/^[0-9]{4}$/', $birthYear)) {
             return false;
         }
 
-        if (!self::verify($tcKimlikNo)) {
+        if (! self::verify($tcKimlikNo)) {
             return false;
         }
 
@@ -87,7 +87,7 @@ class TCKimlikNo
             return false;
         }
 
-        if (!preg_match('/^[1-9]{1}[0-9]{9}[0,2,4,6,8]{1}$/', $tcKimlikNo)) {
+        if (! preg_match('/^[1-9]{1}[0-9]{9}[0,2,4,6,8]{1}$/', $tcKimlikNo)) {
             return false;
         }
 
