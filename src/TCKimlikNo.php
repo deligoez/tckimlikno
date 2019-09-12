@@ -118,6 +118,10 @@ class TCKimlikNo
         $digit10 = ($oddDigitsSum * 7 - $evenDigitsSum) % 10;
         $digit11 = ($oddDigitsSum + $evenDigitsSum + $digit10) % 10;
 
+        if ($digit10 < 0) {
+            $digit10 += 10;
+        }
+
         return $digit10.$digit11;
     }
 }

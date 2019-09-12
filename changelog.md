@@ -6,6 +6,10 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 - 
 
+## Version 1.4.1 - 2019-09-12
+
+- Fix php negative mod confusion to generate random tckn's
+
 ## Version 1.4.0 - 2019-09-05
 
 - Laravel 6 Support

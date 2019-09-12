@@ -16,4 +16,17 @@ class TCKimlikNoFakerProviderTest extends TestCase
 
         $this->assertEquals(11, strlen($faker->tckn));
     }
+
+    /** @test */
+    public function it_can_generate_too_many_valid_tckns()
+    {
+        $this->markTestSkipped();
+
+        $faker = Factory::create();
+        $faker->addProvider(new TCKimlikNoFakerProvider($faker));
+
+        for ($x = 0; $x <= 1000000; $x++) {
+            $this->assertEquals(11, strlen($faker->tckn));
+        }
+    }
 }
