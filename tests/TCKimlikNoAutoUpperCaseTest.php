@@ -2,9 +2,9 @@
 
 namespace Deligoez\TCKimlikNoDogrula\Tests;
 
-use ReflectionMethod;
-use PHPUnit\Framework\TestCase;
 use Deligoez\TCKimlikNo\TCKimlikNo;
+use PHPUnit\Framework\TestCase;
+use ReflectionMethod;
 
 class TCKimlikNoAutoUpperCaseTest extends TestCase
 {
