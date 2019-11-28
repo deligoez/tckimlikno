@@ -2,8 +2,8 @@
 
 namespace Deligoez\TCKimlikNo\Provider;
 
-use Faker\Provider\Base;
 use Deligoez\TCKimlikNo\TCKimlikNo;
+use Faker\Provider\Base;
 
 class TCKimlikNoFakerProvider extends Base
 {

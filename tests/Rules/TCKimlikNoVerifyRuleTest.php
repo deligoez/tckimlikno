@@ -2,8 +2,8 @@
 
 namespace Deligoez\TCKimlikNoDogrula\Tests\Rules;
 
-use PHPUnit\Framework\TestCase;
 use Deligoez\TCKimlikNo\Rules\TCKimlikNoVerify;
+use PHPUnit\Framework\TestCase;
 
 class TCKimlikNoVerifyRuleTest extends TestCase
 {
