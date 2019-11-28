@@ -2,9 +2,9 @@
 
 namespace Deligoez\TCKimlikNoDogrula\Tests;
 
-use ReflectionMethod;
-use PHPUnit\Framework\TestCase;
 use Deligoez\TCKimlikNo\TCKimlikNo;
+use PHPUnit\Framework\TestCase;
+use ReflectionMethod;
 
 class TCKimlikNoAutoUpperCaseTest extends TestCase
 {
@@ -19,7 +19,7 @@ class TCKimlikNoAutoUpperCaseTest extends TestCase
     }
 
     /** @test */
-    public function it_uppercases_words()
+    public function it_uppercases_words(): void
     {
         $this->assertEquals(
             'YUNUS EMRE',
@@ -28,7 +28,7 @@ class TCKimlikNoAutoUpperCaseTest extends TestCase
     }
 
     /** @test */
-    public function it_uppercases_turkish_specific_letters()
+    public function it_uppercases_turkish_specific_letters(): void
     {
         $this->assertEquals(
             'ÇĞIÖŞÜİ',
@@ -37,7 +37,7 @@ class TCKimlikNoAutoUpperCaseTest extends TestCase
     }
 
     /** @test */
-    public function it_uppercases_turkish_specific_letters_with_circumflex()
+    public function it_uppercases_turkish_specific_letters_with_circumflex(): void
     {
         $this->assertEquals(
             'ÂÊÎÔÛ',

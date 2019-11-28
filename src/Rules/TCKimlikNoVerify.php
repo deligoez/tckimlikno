@@ -14,7 +14,7 @@ class TCKimlikNoVerify implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $value): bool
     {
         return TCKimlikNo::verify($value);
     }
@@ -24,7 +24,7 @@ class TCKimlikNoVerify implements Rule
      *
      * @return string
      */
-    public function message()
+    public function message(): string
     {
         return 'The :attribute must be a valid Turkish Citizen Number.';
     }

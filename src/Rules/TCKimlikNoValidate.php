@@ -39,7 +39,7 @@ class TCKimlikNoValidate implements Rule
      * @return bool
      * @throws \SoapFault
      */
-    public function passes($attribute, $value)
+    public function passes($attribute, $value): bool
     {
         return TCKimlikNo::validate(
             $value,
@@ -55,7 +55,7 @@ class TCKimlikNoValidate implements Rule
      *
      * @return string
      */
-    public function message()
+    public function message(): string
     {
         return 'The :attribute must be a real Turkish Citizen Number.';
     }
