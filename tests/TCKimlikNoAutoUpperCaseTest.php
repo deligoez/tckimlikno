@@ -10,7 +10,7 @@ class TCKimlikNoAutoUpperCaseTest extends TestCase
 {
     protected $toUppercaseTrMethod;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
