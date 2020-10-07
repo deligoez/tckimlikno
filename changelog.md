@@ -4,7 +4,9 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## [Unreleased]
 
-- 
+## Version 2.0.0 - 2020-10-07
+
+- Laravel 8 Support
 
 ## Version 1.5 - 2020-03-10
 

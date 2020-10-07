@@ -124,6 +124,9 @@ If you discover any security related issues, please email ye@deligoz.me instead 
 ## Credits
 
 - [Yunus Emre Deligöz][link-author]
+- [Turan Karatuğ](https://github.com/tkaratug)
+- [Faruk Can](https://github.com/frkcn)
+- [Hakan Özdemir](https://github.com/hozdemir)
 - [All Contributors][link-contributors]
 
 ## License
