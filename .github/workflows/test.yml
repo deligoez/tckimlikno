@@ -22,8 +22,8 @@ jobs:
           uses: shivammathur/setup-php@v2
           with:
             php-version: ${{ matrix.php }}
-            extensions: mbstring, sqlite, pdo_sqlite, iconv
-            coverage: none
+            extensions: mbstring, sqlite, pdo_sqlite, iconv, soap
+            coverage: xdebug
 
       -   name: Setup problem matchers
           run: |
