@@ -47,11 +47,11 @@ class TCKimlikNo
 
         $response = (new SoapClient('https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL'))
             ->TCKimlikNoDogrula([
-                                    'TCKimlikNo' => (int) $tcKimlikNo,
-                                    'Ad'         => trim($name),
-                                    'Soyad'      => trim($surname),
-                                    'DogumYili'  => intval($birthYear),
-                                ]);
+                'TCKimlikNo' => (int) $tcKimlikNo,
+                'Ad'         => trim($name),
+                'Soyad'      => trim($surname),
+                'DogumYili'  => intval($birthYear),
+            ]);
 
         return $response->TCKimlikNoDogrulaResult ? true : false;
     }
