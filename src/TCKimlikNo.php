@@ -29,15 +29,15 @@ class TCKimlikNo
             $surname = self::toUppercaseTr($surname);
         }
 
-        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($name))) {
+        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/u', self::toUppercaseTr($name))) {
             return false;
         }
 
-        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/', self::toUppercaseTr($surname))) {
+        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/u', self::toUppercaseTr($surname))) {
             return false;
         }
 
-        if (! preg_match('/^[0-9]{4}$/', $birthYear)) {
+        if (! preg_match('/^\d{4}$/', $birthYear)) {
             return false;
         }
 
@@ -47,11 +47,11 @@ class TCKimlikNo
 
         $response = (new SoapClient('https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL'))
             ->TCKimlikNoDogrula([
-                'TCKimlikNo' => intval($tcKimlikNo),
-                'Ad'         => trim($name),
-                'Soyad'      => trim($surname),
-                'DogumYili'  => intval($birthYear),
-            ]);
+                                    'TCKimlikNo' => (int) $tcKimlikNo,
+                                    'Ad'         => trim($name),
+                                    'Soyad'      => trim($surname),
+                                    'DogumYili'  => intval($birthYear),
+                                ]);
 
         return $response->TCKimlikNoDogrulaResult ? true : false;
     }
@@ -81,9 +81,9 @@ class TCKimlikNo
      */
     public static function verify($tcKimlikNo): bool
     {
-        $tcKimlikNo = strval($tcKimlikNo);
+        $tcKimlikNo = (string) $tcKimlikNo;
 
-        if (strlen(strval($tcKimlikNo)) != 11) {
+        if (strlen((string) $tcKimlikNo) !== 11) {
             return false;
         }
 
@@ -93,11 +93,11 @@ class TCKimlikNo
 
         $checksumDigits = static::generateChecksumDigits($tcKimlikNo);
 
-        if ($checksumDigits[0] != $tcKimlikNo[9]) {
+        if ($checksumDigits[0] !== $tcKimlikNo[9]) {
             return false;
         }
 
-        if ($checksumDigits[1] != $tcKimlikNo[10]) {
+        if ($checksumDigits[1] !== $tcKimlikNo[10]) {
             return false;
         }
 
