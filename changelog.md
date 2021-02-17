@@ -4,6 +4,15 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## [Unreleased]
 
+## Version 2.1.0 - 2021-02-17
+
+- PHP 8 Support (Thanks to (Thanks to [@taliptako](https://github.com/taliptako))
+- Update composer dependencies
+- Replace `fzaninotto/faker` package with `fakerphp/faker` package
+- Small refactorings
+- Remove Travis CI
+- Run Tests on GitHub Workflows
+
 ## Version 2.0.0 - 2020-10-07
 
 - Laravel 8 Support
