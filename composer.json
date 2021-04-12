@@ -18,8 +18,9 @@
     },
     "require-dev": {
         "mockery/mockery": "^1.4",
-        "orchestra/testbench": "^6.12",
-        "phpunit/phpunit": "^9.5"
+        "orchestra/testbench": "^6.17",
+        "phpunit/phpunit": "^9.5",
+        "ricorocks-digital-agency/soap": "^1.1"
     },
     "autoload": {
         "psr-4": {

@@ -2,7 +2,7 @@
 
 namespace Deligoez\TCKimlikNo;
 
-use SoapClient;
+use RicorocksDigitalAgency\Soap\Facades\Soap;
 
 class TCKimlikNo
 {
@@ -45,15 +45,15 @@ class TCKimlikNo
             return false;
         }
 
-        $response = (new SoapClient('https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL'))
-            ->TCKimlikNoDogrula([
-                'TCKimlikNo' => (int) $tcKimlikNo,
-                'Ad'         => trim($name),
-                'Soyad'      => trim($surname),
-                'DogumYili'  => intval($birthYear),
-            ]);
+        $response = Soap::to('https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL')
+                        ->TCKimlikNoDogrula([
+                                                'TCKimlikNo' => (int) $tcKimlikNo,
+                                                'Ad'         => trim($name),
+                                                'Soyad'      => trim($surname),
+                                                'DogumYili'  => (int) $birthYear,
+                                            ]);
 
-        return $response->TCKimlikNoDogrulaResult ? true : false;
+        return (bool) $response->TCKimlikNoDogrulaResult;
     }
 
     /**
