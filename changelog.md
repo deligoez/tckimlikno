@@ -4,6 +4,10 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## [Unreleased]
 
+## Version 2.2.0 - 2021-04-12
+- Allow `.` character on name and surnames
+- Use `ricorocks-digital-agency/soap` package for making/faking soap requests
+
 ## Version 2.1.0 - 2021-02-17
 
 - PHP 8 Support (Thanks to (Thanks to [@taliptako](https://github.com/taliptako))
