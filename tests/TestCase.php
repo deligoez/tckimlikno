@@ -18,7 +18,7 @@ abstract class TestCase extends \Orchestra\Testbench\TestCase
     {
         return [
             TCKimlikNoServiceProvider::class,
-            SoapServiceProvider::class
+            SoapServiceProvider::class,
         ];
     }
 }

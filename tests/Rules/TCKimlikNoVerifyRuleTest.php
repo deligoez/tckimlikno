@@ -2,8 +2,8 @@
 
 namespace Deligoez\TCKimlikNo\Tests\Rules;
 
-use Deligoez\TCKimlikNo\Tests\TestCase;
 use Deligoez\TCKimlikNo\Rules\TCKimlikNoVerify;
+use Deligoez\TCKimlikNo\Tests\TestCase;
 
 class TCKimlikNoVerifyRuleTest extends TestCase
 {
