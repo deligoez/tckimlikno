@@ -1,10 +1,10 @@
 <?php
 
-namespace Deligoez\TCKimlikNoDogrula\Tests\Provider;
+namespace Deligoez\TCKimlikNo\Tests\Provider;
 
+use Deligoez\TCKimlikNo\Tests\TestCase;
 use Deligoez\TCKimlikNo\Provider\TCKimlikNoFakerProvider;
 use Faker\Factory;
-use PHPUnit\Framework\TestCase;
 
 class TCKimlikNoFakerProviderTest extends TestCase
 {

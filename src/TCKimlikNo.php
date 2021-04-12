@@ -29,11 +29,11 @@ class TCKimlikNo
             $surname = self::toUppercaseTr($surname);
         }
 
-        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/u', self::toUppercaseTr($name))) {
+        if (! preg_match('/^[A-Z\. ÇĞÖŞÜİ]+$/u', self::toUppercaseTr($name))) {
             return false;
         }
 
-        if (! preg_match('/^[A-Z ÇĞÖŞÜİ]+$/u', self::toUppercaseTr($surname))) {
+        if (! preg_match('/^[A-Z\. ÇĞÖŞÜİ]+$/u', self::toUppercaseTr($surname))) {
             return false;
         }
 
