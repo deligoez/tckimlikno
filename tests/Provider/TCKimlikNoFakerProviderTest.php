@@ -2,8 +2,8 @@
 
 namespace Deligoez\TCKimlikNo\Tests\Provider;
 
-use Deligoez\TCKimlikNo\Tests\TestCase;
 use Deligoez\TCKimlikNo\Provider\TCKimlikNoFakerProvider;
+use Deligoez\TCKimlikNo\Tests\TestCase;
 use Faker\Factory;
 
 class TCKimlikNoFakerProviderTest extends TestCase
