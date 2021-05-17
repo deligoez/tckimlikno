@@ -127,6 +127,7 @@ If you discover any security related issues, please email ye@deligoz.me instead 
 - [Turan Karatuğ](https://github.com/tkaratug)
 - [Faruk Can](https://github.com/frkcn)
 - [Hakan Özdemir](https://github.com/hozdemir)
+- [Mecit](https://github.com/Mecit)
 - [All Contributors][link-contributors]
 
 ## License

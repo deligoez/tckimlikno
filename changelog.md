@@ -4,6 +4,9 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## [Unreleased]
 
+## Version 3.1.0 - 2021-05-17
+- Allow localization of error messages (Thanks to [@Mecit](https://github.com/Mecit))
+
 ## Version 3.0.0 - 2021-04-12
 - Allow `.` character on name and surnames
 - Use `ricorocks-digital-agency/soap` package for making/faking soap requests
@@ -11,7 +14,7 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## Version 2.1.0 - 2021-02-17
 
-- PHP 8 Support (Thanks to (Thanks to [@taliptako](https://github.com/taliptako))
+- PHP 8 Support (Thanks to [@taliptako](https://github.com/taliptako))
 - Update composer dependencies
 - Replace `fzaninotto/faker` package with `fakerphp/faker` package
 - Small refactorings
