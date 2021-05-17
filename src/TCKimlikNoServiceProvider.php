@@ -13,7 +13,7 @@ class TCKimlikNoServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'deligoez');
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'tckimlikno');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'deligoez');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
@@ -47,9 +47,9 @@ class TCKimlikNoServiceProvider extends ServiceProvider
         ], 'tckimlikno.views');*/
 
         // Publishing the translation files.
-        /*$this->publishes([
-            __DIR__.'/../resources/lang' => resource_path('lang/vendor/deligoez'),
-        ], 'tckimlikno.views');*/
+        $this->publishes([
+            __DIR__.'/../resources/lang' => resource_path('lang/vendor/tckimlikno'),
+        ]);
 
         // Registering package commands.
         // $this->commands([]);

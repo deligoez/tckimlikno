@@ -4,6 +4,7 @@ namespace Deligoez\TCKimlikNo\Tests;
 
 use Deligoez\TCKimlikNo\TCKimlikNo;
 use RicorocksDigitalAgency\Soap\Facades\Soap;
+use Deligoez\TCKimlikNo\Rules\TCKimlikNoValidate;
 use RicorocksDigitalAgency\Soap\Response\Response;
 
 class TCKimlikNoValidateTest extends TestCase
@@ -90,5 +91,19 @@ class TCKimlikNoValidateTest extends TestCase
         $this->assertTrue(
             TCKimlikNo::validate('10000000146', 'YUNUS EMRE', 'D. DELİGÖZ', '1900')
         );
+    }
+
+    /** @test */
+    public function it_displays_the_translated_error_message()
+    {
+        $rule = new TCKimlikNoValidate('10000000146', 'YUNUS EMRE', 'DELİGÖZ', ' ');
+
+        $this->assertFalse($rule->passes('field', '10000000146'));
+
+        $this->assertSame('The :attribute field must be a valid Turkish Citizen Number.', $rule->message());
+
+        $this->app->setLocale('tr');
+
+        $this->assertSame(':attribute alanı geçerli bir T.C. Kimlik Numarası olmalıdır.', $rule->message());
     }
 }

@@ -26,6 +26,6 @@ class TCKimlikNoVerify implements Rule
      */
     public function message(): string
     {
-        return 'The :attribute must be a valid Turkish Citizen Number.';
+        return trans('tckimlikno::messages.tckn');
     }
 }
