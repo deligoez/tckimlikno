@@ -2,9 +2,9 @@
 
 namespace Deligoez\TCKimlikNo\Tests;
 
+use Deligoez\TCKimlikNo\Rules\TCKimlikNoValidate;
 use Deligoez\TCKimlikNo\TCKimlikNo;
 use RicorocksDigitalAgency\Soap\Facades\Soap;
-use Deligoez\TCKimlikNo\Rules\TCKimlikNoValidate;
 use RicorocksDigitalAgency\Soap\Response\Response;
 
 class TCKimlikNoValidateTest extends TestCase
