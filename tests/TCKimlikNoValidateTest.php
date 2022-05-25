@@ -27,10 +27,6 @@ class TCKimlikNoValidateTest extends TestCase
         $this->assertFalse(
             TCKimlikNo::validate('10000000146', '!', 'DELİGÖZ', '1900')
         );
-
-        $this->assertFalse(
-            TCKimlikNo::validate('10000000146', ' ', 'DELİGÖZ', '1900')
-        );
     }
 
     /** @test */
@@ -42,10 +38,6 @@ class TCKimlikNoValidateTest extends TestCase
 
         $this->assertFalse(
             TCKimlikNo::validate('10000000146', 'YUNUS EMRE', '!', '1900')
-        );
-
-        $this->assertFalse(
-            TCKimlikNo::validate('10000000146', 'YUNUS EMRE', ' ', '1900')
         );
     }
 
