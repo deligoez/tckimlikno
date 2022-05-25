@@ -1,28 +1,16 @@
-name: Test
-
-on: [ push, pull_request ]
-
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
       matrix:
-        os: [ ubuntu-latest ]
-        php: [ 7.4, 8.0, 8.1 ]
-        dependency-version: [ prefer-lowest, prefer-stable ]
-        laravel: [ '9.*', '8.*','7.*','6.*' ]
+        php: [8.0, 8.1]
+        laravel: [9.*]
+        dependency-version: [prefer-lowest, prefer-stable]
         include:
           - laravel: 9.*
             testbench: 7.*
-          - laravel: 8.*
-            testbench: 6.*
-          - laravel: 7.*
-            testbench: 5.*
-          - laravel: 6.*
-            testbench: 4.*
 
-    name: PHP ${{ matrix.php }} Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-version }} - ${{ matrix.os }}
+    name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.dependency-version }}
 
     steps:
       - name: Checkout code
@@ -32,16 +20,12 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: mbstring, sqlite, pdo_sqlite, iconv, soap
-          coverage: xdebug
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick
+          coverage: none
 
-      - name: Setup problem matchers
-        run: |
-          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
-          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
       - name: Install dependencies
         run: |
-          composer update --${{ matrix.dependency-stability }} --prefer-dist --no-interaction --no-suggest
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
       - name: Execute tests
-        run: vendor/bin/phpunit --testdox --coverage-text
+        run: vendor/bin/phpunit
