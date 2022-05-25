@@ -12,14 +12,14 @@
     "homepage": "https://github.com/deligoez/tckimlikno",
     "keywords": ["laravel", "package", "validation", "tckimlikno", "mernis"],
     "require": {
-        "php": "^7.4 | ^8.0",
-        "illuminate/support": "^8.0 | ^9.0",
-        "fakerphp/faker": "^1.13",
-        "ricorocks-digital-agency/soap": "^1.1"
+        "php": "^7.4 | ^8.0 | ^8.1",
+        "illuminate/support": "^6.0 | ^7.0 | ^8.0 | ^9.0",
+        "ricorocks-digital-agency/soap": "^1.6"
     },
     "require-dev": {
-        "mockery/mockery": "^1.4",
-        "orchestra/testbench": "^6.17",
+        "mockery/mockery": "^1.5",
+        "fakerphp/faker": "^1.19",
+        "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
