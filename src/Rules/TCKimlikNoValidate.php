@@ -37,6 +37,7 @@ class TCKimlikNoValidate implements Rule
      * @param  string  $attribute
      * @param  mixed  $value
      * @return bool
+     *
      * @throws \SoapFault
      */
     public function passes($attribute, $value): bool

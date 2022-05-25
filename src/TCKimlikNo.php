@@ -15,6 +15,7 @@ class TCKimlikNo
      * @param  string  $birthYear
      * @param  bool  $autoUppercase
      * @return bool
+     *
      * @throws \SoapFault
      */
     public static function validate(
