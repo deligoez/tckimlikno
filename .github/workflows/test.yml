@@ -41,7 +41,7 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
           composer update --${{ matrix.dependency-stability }} --prefer-dist --no-interaction --no-suggest
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
       - name: Execute tests
         run: vendor/bin/phpunit --testdox --coverage-text
