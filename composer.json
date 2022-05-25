@@ -19,7 +19,7 @@
     "require-dev": {
         "mockery/mockery": "^1.5",
         "fakerphp/faker": "^1.19",
-        "orchestra/testbench": "^7.0",
+        "orchestra/testbench": "^7.5",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
