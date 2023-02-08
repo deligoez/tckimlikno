@@ -63,7 +63,7 @@ class TCKimlikNo
      * @param $name
      * @return bool|false|mixed|string|string[]|null
      */
-    private static function toUppercaseTr(string $name): string
+    public static function toUppercaseTr(string $name): string
     {
         return mb_strtoupper(
             str_replace(
