@@ -24,7 +24,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Deligoez\\TCKimlikNo\\": "src/"
+            "Deligoez\\TCKimlikNo\\": "src/",
+            "Deligoez\\YabanciKimlikNo\\": "src/"
         }
     },
     "autoload-dev": {
