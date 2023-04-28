@@ -13,7 +13,7 @@
     "keywords": ["laravel", "package", "validation", "tckimlikno", "mernis"],
     "require": {
         "php": "^7.4 | ^8.0 | ^8.1",
-        "illuminate/support": "^6.0 | ^7.0 | ^8.0 | ^9.0",
+        "illuminate/support": "^6.0 | ^7.0 | ^8.0 | ^9.0 | ^10.0",
         "ricorocks-digital-agency/soap": "^1.6"
     },
     "require-dev": {
