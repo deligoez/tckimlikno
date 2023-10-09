@@ -4,6 +4,17 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## [Unreleased]
 
+## Version 4.1.0 - 2023-10-09
+- New search api by @aydinfatih in #26
+
+## Version 4.0.0 - 2023-04-28
+- Add Laravel V10 Support
+- Drop PHP 7.4 and 8.0 support.
+- Drop Laravel 6, 7, 8 support
+
+## Version 3.2.0 - 2022-05-25
+- Laravel 9 support by @frkcn in #20
+
 ## Version 3.1.0 - 2021-05-17
 - Allow localization of error messages (Thanks to [@Mecit](https://github.com/Mecit))
 
