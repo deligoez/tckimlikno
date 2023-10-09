@@ -7,29 +7,16 @@ use Illuminate\Contracts\Validation\Rule;
 
 class TCKimlikNoValidate implements Rule
 {
-    /** @var string */
-    protected $name;
-
-    /** @var string */
-    protected $surname;
-
-    /** @var string */
-    protected $birthYear;
-
-    /** @var bool */
-    protected $autoUppercase;
 
     public function __construct(
-        string $name,
-        string $surname,
-        string $birthYear,
-        bool $autoUppercase = true
-    ) {
-        $this->name = $name;
-        $this->surname = $surname;
-        $this->birthYear = $birthYear;
-        $this->autoUppercase = $autoUppercase;
-    }
+        protected string $name,
+        protected string $surname,
+        protected int|string $birthYear,
+        protected bool $autoUppercase = true,
+        protected null|int|string $birthMonth = null,
+        protected null|int|string $birthDay = null,
+        protected bool $forcePublicApi = false,
+    ) { }
 
     /**
      * Determine if the validation rule passes.
@@ -47,7 +34,10 @@ class TCKimlikNoValidate implements Rule
             $this->name,
             $this->surname,
             $this->birthYear,
-            $this->autoUppercase
+            $this->autoUppercase,
+            $this->birthMonth,
+            $this->birthDay,
+            $this->forcePublicApi
         );
     }
 
