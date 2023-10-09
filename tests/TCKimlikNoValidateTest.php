@@ -4,6 +4,7 @@ namespace Deligoez\TCKimlikNo\Tests;
 
 use Deligoez\TCKimlikNo\Rules\TCKimlikNoValidate;
 use Deligoez\TCKimlikNo\TCKimlikNo;
+use Illuminate\Support\Facades\Http;
 use RicorocksDigitalAgency\Soap\Facades\Soap;
 use RicorocksDigitalAgency\Soap\Response\Response;
 
@@ -71,6 +72,57 @@ class TCKimlikNoValidateTest extends TestCase
         $this->assertTrue(
             TCKimlikNo::validate('10000000146', 'Y. EMRE', 'DELİGÖZ', '1900')
         );
+    }
+
+
+    /** @test */
+    public function it_sends_a_request_to_the_public_api_if_there_is_no_birth_year_and_day(): void
+    {
+        Http::fake();
+        Soap::fake([
+            'https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL' => Response::new(['TCKimlikNoDogrulaResult' => true]),
+        ]);
+
+
+        $this->assertTrue(
+            TCKimlikNo::validate('10000000146', 'Y. EMRE', 'DELİGÖZ', '1900')
+        );
+
+        Http::assertNothingSent();
+    }
+
+
+    /** @test */
+    public function it_sends_a_request_to_the_search_api_if_there_is_a_birth_year_and_day(): void
+    {
+        Http::fake([
+            'https://tckimlik.nvi.gov.tr/tcKimlikNoDogrula/search' => Http::response(['success' => true]),
+        ]);
+
+        Soap::fake();
+
+        $this->assertTrue(
+            TCKimlikNo::validate('10000000146', 'Y. EMRE', 'DELİGÖZ', '1900', true, 1, 1)
+        );
+
+        Soap::assertNothingSent();
+    }
+
+
+    /** @test */
+    public function it_sends_a_request_to_the_public_api_if_forced_to_public_api(): void
+    {
+        Http::fake();
+        Soap::fake([
+            'https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL' => Response::new(['TCKimlikNoDogrulaResult' => true]),
+        ]);
+
+
+        $this->assertTrue(
+            TCKimlikNo::validate('10000000146', 'Y. EMRE', 'DELİGÖZ', '1900', true, 1, 1, true)
+        );
+
+        Http::assertNothingSent();
     }
 
     /** @test */
