@@ -2,6 +2,8 @@
 
 namespace Deligoez\TCKimlikNo;
 
+use Exception;
+use Illuminate\Support\Facades\Http;
 use RicorocksDigitalAgency\Soap\Facades\Soap;
 
 class TCKimlikNo
@@ -22,8 +24,11 @@ class TCKimlikNo
         $tcKimlikNo,
         string $name,
         string $surname,
-        $birthYear,
-        bool $autoUppercase = true
+        int|string $birthYear,
+        bool $autoUppercase = true,
+        null|int|string $birthMonth = null,
+        null|int|string $birthDay = null,
+        bool $forcePublicApi = false,
     ): bool {
         if ($autoUppercase) {
             $name = self::toUppercaseTr($name);
@@ -44,6 +49,23 @@ class TCKimlikNo
 
         if (! self::verify($tcKimlikNo)) {
             return false;
+        }
+
+        if ($birthMonth !== null && $birthDay !== null && $forcePublicApi === false) {
+           try {
+               $response = Http::post('https://tckimlik.nvi.gov.tr/tcKimlikNoDogrula/search', [
+                   'TCKimlikNo' => (int) $tcKimlikNo,
+                   'Ad'         => trim($name),
+                   'Soyad'      => trim($surname),
+                   'DogumYil'  => (int) $birthYear,
+                   'DogumAy'    => (int) $birthMonth,
+                   'DogumGun'   => (int) $birthDay,
+               ]);
+
+               return (bool) $response['success'];
+           } catch (Exception $exception) {
+               return self::validate($tcKimlikNo, $name, $surname, $birthYear, $birthMonth,$birthDay,$autoUppercase, true);
+           }
         }
 
         $response = Soap::to('https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL')
