@@ -54,15 +54,15 @@ class TCKimlikNo
         if ($birthMonth !== null && $birthDay !== null && $forcePublicApi === false) {
             try {
                 $response = Http::post('https://tckimlik.nvi.gov.tr/tcKimlikNoDogrula/search', [
-                    'TCKimlikNo' => (int)$tcKimlikNo,
+                    'TCKimlikNo' => (int) $tcKimlikNo,
                     'Ad'         => trim($name),
                     'Soyad'      => trim($surname),
-                    'DogumYil'   => (int)$birthYear,
-                    'DogumAy'    => (int)$birthMonth,
-                    'DogumGun'   => (int)$birthDay,
+                    'DogumYil'   => (int) $birthYear,
+                    'DogumAy'    => (int) $birthMonth,
+                    'DogumGun'   => (int) $birthDay,
                 ]);
 
-                return (bool)$response['success'];
+                return (bool) $response['success'];
             } catch (Exception $exception) {
                 return self::validate($tcKimlikNo, $name, $surname, $birthYear, $birthMonth, $birthDay, $autoUppercase, true);
             }

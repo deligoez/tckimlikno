@@ -16,7 +16,6 @@ class TCKimlikNoValidate implements Rule
         protected null|int|string $birthDay = null,
         protected bool $forcePublicApi = false,
     ) {
-        
     }
 
     /**
