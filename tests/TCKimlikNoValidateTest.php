@@ -74,7 +74,6 @@ class TCKimlikNoValidateTest extends TestCase
         );
     }
 
-
     /** @test */
     public function it_sends_a_request_to_the_public_api_if_there_is_no_birth_year_and_day(): void
     {
@@ -83,14 +82,12 @@ class TCKimlikNoValidateTest extends TestCase
             'https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL' => Response::new(['TCKimlikNoDogrulaResult' => true]),
         ]);
 
-
         $this->assertTrue(
             TCKimlikNo::validate('10000000146', 'Y. EMRE', 'DELİGÖZ', '1900')
         );
 
         Http::assertNothingSent();
     }
-
 
     /** @test */
     public function it_sends_a_request_to_the_search_api_if_there_is_a_birth_year_and_day(): void
@@ -108,7 +105,6 @@ class TCKimlikNoValidateTest extends TestCase
         Soap::assertNothingSent();
     }
 
-
     /** @test */
     public function it_sends_a_request_to_the_public_api_if_forced_to_public_api(): void
     {
@@ -116,7 +112,6 @@ class TCKimlikNoValidateTest extends TestCase
         Soap::fake([
             'https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL' => Response::new(['TCKimlikNoDogrulaResult' => true]),
         ]);
-
 
         $this->assertTrue(
             TCKimlikNo::validate('10000000146', 'Y. EMRE', 'DELİGÖZ', '1900', true, 1, 1, true)

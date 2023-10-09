@@ -7,7 +7,6 @@ use Illuminate\Contracts\Validation\Rule;
 
 class TCKimlikNoValidate implements Rule
 {
-
     public function __construct(
         protected string $name,
         protected string $surname,
@@ -16,7 +15,9 @@ class TCKimlikNoValidate implements Rule
         protected null|int|string $birthMonth = null,
         protected null|int|string $birthDay = null,
         protected bool $forcePublicApi = false,
-    ) { }
+    ) {
+        
+    }
 
     /**
      * Determine if the validation rule passes.
