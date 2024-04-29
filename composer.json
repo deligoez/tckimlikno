@@ -12,8 +12,8 @@
     "homepage": "https://github.com/deligoez/tckimlikno",
     "keywords": ["laravel", "package", "validation", "tckimlikno", "mernis"],
     "require": {
-        "php": "^8.1 | ^8.2",
-        "illuminate/support": "^9.0 | ^10.0",
+        "php": "^8.1 | ^8.2| ^8.3",
+        "illuminate/support": "^9.0 | ^10.0| ^11.0",
         "ricorocks-digital-agency/soap": "^1.6",
         "guzzlehttp/guzzle": "^7.2.0"
     },
