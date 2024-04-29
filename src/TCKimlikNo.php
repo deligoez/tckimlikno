@@ -55,11 +55,11 @@ class TCKimlikNo
             try {
                 $response = Http::post('https://tckimlik.nvi.gov.tr/tcKimlikNoDogrula/search', [
                     'TCKimlikNo' => (int) $tcKimlikNo,
-                    'Ad'         => trim($name),
-                    'Soyad'      => trim($surname),
-                    'DogumYil'   => (int) $birthYear,
-                    'DogumAy'    => (int) $birthMonth,
-                    'DogumGun'   => (int) $birthDay,
+                    'Ad' => trim($name),
+                    'Soyad' => trim($surname),
+                    'DogumYil' => (int) $birthYear,
+                    'DogumAy' => (int) $birthMonth,
+                    'DogumGun' => (int) $birthDay,
                 ]);
 
                 return (bool) $response['success'];
@@ -71,9 +71,9 @@ class TCKimlikNo
         $response = Soap::to('https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx?WSDL')
                         ->TCKimlikNoDogrula([
                             'TCKimlikNo' => (int) $tcKimlikNo,
-                            'Ad'         => trim($name),
-                            'Soyad'      => trim($surname),
-                            'DogumYili'  => (int) $birthYear,
+                            'Ad' => trim($name),
+                            'Soyad' => trim($surname),
+                            'DogumYili' => (int) $birthYear,
                         ]);
 
         return (bool) $response->TCKimlikNoDogrulaResult;
