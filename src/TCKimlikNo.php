@@ -28,7 +28,7 @@ class TCKimlikNo
         bool $autoUppercase = true,
         null|int|string $birthMonth = null,
         null|int|string $birthDay = null,
-        bool $forcePublicApi = false,
+        bool $forcePublicApi = true,
     ): bool {
         if ($autoUppercase) {
             $name = self::toUppercaseTr($name);
