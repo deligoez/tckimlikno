@@ -4,6 +4,12 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## [Unreleased]
 
+## Version 5.0.0 - 2024-06-26
+- Add Laravel V11 Support
+- Add PHP 8.3 Support
+- Add `guzzlehttp/guzzle` dependency at version ^7.2.0 for HTTP requests.
+- Upgrade `phpunit/phpunit` to ^9.5 | ^10.5 for testing.
+
 ## Version 4.1.0 - 2023-10-09
 - New search api by @aydinfatih in #26
 
