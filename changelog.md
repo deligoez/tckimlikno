@@ -4,6 +4,10 @@ All notable changes to `TCKimlikNo` will be documented in this file.
 
 ## [Unreleased]
 
+## Version 5.1.0 - 2025-02-25
+- Add Laravel V12 Support
+- Add PHP 8.4 Support
+
 ## Version 5.0.0 - 2024-06-26
 - Add Laravel V11 Support
 - Add PHP 8.3 Support
