@@ -1,3 +1,6 @@
+> ⚠️ **This project is no longer maintained.**
+> The NVI public verification services at tckimlik.nvi.gov.tr were discontinued as of 30.09.2025. The `validate()` method that relied on the NVI API no longer works. The offline `verify()` method (algorithm-based) still functions, but this package will not receive further updates.
+
 # TCKimlikNo
 
 [![MIT Licensed][ico-license]](license.md)
